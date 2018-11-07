@@ -15,7 +15,25 @@
 </head>
 <body>
     <div id="app">
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-lg">
+                    <!-- Image and text -->
+                    <nav class="navbar navbar-light bg-primary">
+                        <a class="navbar-brand text-warning" href="#">
+                            <i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
+                            Happy numbers
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Scripts -->

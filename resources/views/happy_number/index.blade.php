@@ -20,37 +20,40 @@
                 @endif
             @endif
         @endif
-        <div class="row">
-            <div class="col-sm-12">
-                <form id="user-form" class="form-horizontal" method="POST" action="{{ action('HappyNumberController@store') }}">
-                    @method('POST')
-                    @csrf
+            <div class="card">
+                <div class="card-header">
+                    Happy Number Checker
+                </div>
+                <div class="card-body">
+                    <form id="user-form" class="form-horizontal" method="POST" action="{{ action('HappyNumberController@store') }}">
+                        @method('POST')
+                        @csrf
 
-                    <div class="form-group{{ $errors->has('happy_number') ? ' has-error' : '' }}">
-                        <label for="happy_number" class="col-md-4 control-label">Number To Check</label>
+                        <div class="form-group{{ $errors->has('happy_number') ? ' has-error' : '' }}">
+                            <label for="happy_number" class="col-md-4 control-label">Number</label>
 
-                        <div class="col-md-6">
-                            <input id="happy_number" type="number" class="form-control" name="happy_number" value="{{ old('happy_number') ? old('happy_number') : ( $happy_number_results['number'] ? $happy_number_results['number'] : 1) }}" required>
+                            <div class="col-md-6">
+                                <input id="happy_number" type="number" class="form-control" name="happy_number" value="{{ old('happy_number') ? old('happy_number') : ( $happy_number_results['number'] ? $happy_number_results['number'] : 1) }}" required>
 
-                            @if ($errors->has('happy_number'))
-                                <span class="help-block">
+                                @if ($errors->has('happy_number'))
+                                    <span class="help-block">
                                         <strong>{{ $errors->first('happy_number') }}</strong>
                                     </span>
-                            @endif
+                                @endif
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-default ">
-                                <span class="glyphicon glyphicon-floppy-save text-success" aria-hidden="true"></span>
-                                <span class="text-success">Save</span>
-                            </button>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-outline-success ">
+                                    <i class="fa fa-question-circle-o text-success" aria-hidden="true"></i>
+                                    <span class="text-success">Check</span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
     </div>
 
 
