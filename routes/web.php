@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('happy-number', 'HappyNumberController')->only(['index', 'store']);
+
+
