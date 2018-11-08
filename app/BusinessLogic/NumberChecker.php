@@ -8,6 +8,8 @@
 
 namespace App\BusinessLogic;
 
+use Exception;
+
 
 class NumberChecker
 {

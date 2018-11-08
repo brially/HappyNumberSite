@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('api/happy-number', 'Api/HappyNumberController')->only(['index', 'store']);
+//Route::resource('api/happy-number', 'Api\HappyNumberController')->only(['index', 'store']);

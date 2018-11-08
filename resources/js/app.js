@@ -18,5 +18,22 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    methods: {
+        checkHappyNumber: function() {
+            $('.alert-happy-number').hide();
+            $.post('/api/happy-number', {happy_number: this.happy_number}, function (data) {
+                app.result_number = data.number;
+                if(data.is_happy) $('.alert-happy-number-happy').show();
+                else $('.alert-happy-number-sad').show();
+            }).fail(function (jqXHR) {
+                $('.alert-happy-number-error').show();
+            });
+        }
+    },
+    data: {
+        happy_number: 1,
+        result_number: 1
+    }
 });
+

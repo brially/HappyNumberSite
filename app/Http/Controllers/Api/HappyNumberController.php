@@ -18,8 +18,9 @@ class HappyNumberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(HappyNumberRequest $request)
+    public function store(Request $request)
     {
+        //return response()->json(['hello'=>'there']);
         $happy_number_results = [
             'number'=>$request->input('happy_number'),
             'is_happy'=> false,

@@ -15,4 +15,6 @@ Route::get('/', 'HappyNumberController@index');
 
 Route::resource('happy-number', 'HappyNumberController')->only(['index', 'store']);
 
+Route::post('api/happy-number', 'Api\HappyNumberController@store');
+
 
