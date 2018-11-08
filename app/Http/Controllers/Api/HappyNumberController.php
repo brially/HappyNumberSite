@@ -1,23 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\BusinessLogic\NumberChecker;
 use App\Http\Requests\HappyNumberRequest;
 use Illuminate\Support\Facades\Input;
 
 class HappyNumberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $happy_number_results = Input::get('happy_number_results');
-        return view('happy_number/index', compact('happy_number_results'));
-    }
 
 
     /**
@@ -36,13 +28,13 @@ class HappyNumberController extends Controller
         ];
         try{
             $happy_number_results['is_happy'] = NumberChecker::isHappy($request->input('happy_number'));
+            return response()->json($happy_number_results, 200);
         }
         catch(\Exception $e){
             $happy_number_results['error'] = true;
             $happy_number_results['error_message'] = $e->getMessage();
-
+            return response()->json($happy_number_results, 400);
         }
-        return view('happy_number/index', compact('happy_number_results'));
     }
 
 }

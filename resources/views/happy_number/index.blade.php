@@ -36,7 +36,7 @@
                                 <input id="happy_number" type="number" class="form-control" name="happy_number" value="{{ old('happy_number') ? old('happy_number') : ( $happy_number_results['number'] ? $happy_number_results['number'] : 1) }}" required>
 
                                 @if ($errors->has('happy_number'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('happy_number') }}</strong>
                                     </span>
                                 @endif
@@ -46,8 +46,8 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-outline-success ">
-                                    <i class="fa fa-question-circle-o text-success" aria-hidden="true"></i>
-                                    <span class="text-success">Check</span>
+                                    <i class="fa fa-question-circle-o " aria-hidden="true"></i>
+                                    <span class="">Check</span>
                                 </button>
                             </div>
                         </div>
@@ -55,6 +55,4 @@
                 </div>
             </div>
     </div>
-
-
 @endsection

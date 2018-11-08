@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HappyNumberController@index');
 
 Route::resource('happy-number', 'HappyNumberController')->only(['index', 'store']);
 
