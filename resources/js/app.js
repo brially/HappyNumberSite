@@ -32,8 +32,14 @@ const app = new Vue({
         }
     },
     data: {
+        is_happy: true,
         happy_number: 1,
-        result_number: 1
+        result_number: 1,
+        alert_happy_class: 'alert alert-warning alert-happy-number  collapse',
+        alert_sad_class: 'alert alert-info alert-happy-number collapse',
+        smile_icon_class: 'fa fa-smile-o fa-5x',
+        frown_icon_class: 'fa fa-frown-o fa-5x',
+
     }
 });
 

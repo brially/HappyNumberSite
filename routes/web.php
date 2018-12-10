@@ -17,4 +17,8 @@ Route::resource('happy-number', 'HappyNumberController')->only(['index', 'store'
 
 Route::post('api/happy-number', 'Api\HappyNumberController@store');
 
+Route::resource('javascript-scratch-pad', 'JavaScriptPracticeController')->only(['index', 'store']);
+
+Route::resource('influence-health-scratch-pad', 'InfluenceHealthController')->only(['index', 'store']);
+
 
